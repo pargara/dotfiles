@@ -52,3 +52,9 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 let g:astro_typescript = 'enable'
 
+inoremap <expr> <TAB> pumvisible() ? "<C-y>" : "<TAB>"
+
+
+set clipboard=unnamedplus " configuracion para copiar y pegar por fuera de nvim
+
+
