@@ -15,8 +15,8 @@ Plug 'https://github.com/ap/vim-css-color' " Previsualizar colores de CSS
 " Plug para la barra de status
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug para
-Plug 'https://github.com/preservim/nerdtree'
+" Plug para tener una barra de navegacion
+" Plug 'https://github.com/preservim/nerdtree'
 " Plug para tener rubocop
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug para tener soporte de multiples lenguajes
@@ -46,14 +46,7 @@ END
 
 set encoding=UTF-8
 
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-
 let g:astro_typescript = 'enable'
-
-inoremap <expr> <TAB> pumvisible() ? "<C-y>" : "<TAB>"
-
 
 set clipboard=unnamedplus " configuracion para copiar y pegar por fuera de nvim
 
