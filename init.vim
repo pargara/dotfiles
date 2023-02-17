@@ -13,6 +13,8 @@ let g:deoplete#enable_at_startup = 1
 
 call plug#begin()
 Plug 'https://github.com/ap/vim-css-color' " Previsualizar colores de CSS
+" Plug RuboCop
+Plug 'ngmy/vim-rubocop'
 " Plug para la barra de status
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'sheerun/vim-polyglot'
@@ -41,6 +43,12 @@ require('lualine').setup {
 options = { theme = "ayu_dark"}
 }
 END
+
+
+" RuboCop Stuff
+let g:vimrubocop_config = '~/.config/rubocop/default.yml'
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
 
 set encoding=UTF-8
 
