@@ -38,6 +38,8 @@ set termguicolors
 let ayucolor="dark"
 colorscheme ayu
 
+let g:deoplete#enable_at_startup = 1
+
 lua << END
 require('lualine').setup {
 options = { theme = "ayu_dark"}
