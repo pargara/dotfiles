@@ -32,4 +32,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.cmd('colorscheme xcodehc')
+-- vim.cmd('colorscheme catppuccin-mocha')
+vim.cmd.colorscheme "catppuccin-mocha"
