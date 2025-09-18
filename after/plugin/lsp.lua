@@ -4,7 +4,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local servers = {
-    tsserver = {},
+    ts_ls = {},
     rust_analyzer = {},
     solargraph = {},
     eslint = {},
@@ -50,26 +50,19 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'tsserver', 'rust_analyzer', 'solargraph', 'eslint', 'ruby_lsp', "sorbet", "rubocop", "pyre", "pylsp" },
-    handlers = {
-        lsp_zero.default_setup,
-        lua_ls = function()
-            local lua_opts = lsp_zero.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
-        end,
-    }
+    ensure_installed = {'ts_ls', 'rust_analyzer', 'solargraph', 'eslint', 'ruby_lsp', "sorbet", "rubocop", "pyre", "pylsp" },
+    automatic_enable = false,
 })
 
-require('mason-lspconfig').setup_handlers {
-  function(server_name)
-    require("lspconfig")[server_name].setup {
-      capabilities = capabilities,
-      on_attach = lsp_zero.on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end
-}
+local lspconfig = require('lspconfig')
+for server_name, server_settings in pairs(servers) do
+    lspconfig[server_name].setup({
+        capabilities = capabilities,
+        on_attach = lsp_zero.on_attach,
+        settings = server_settings,
+        filetypes = server_settings.filetypes,
+    })
+end
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -88,4 +81,19 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
 })
+
+require('telescope').setup{
+  defaults = {
+    path_display = { 'smart' },
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = 'smart_case',
+    },
+  },
+}
+pcall(require('telescope').load_extension, 'fzf')
 

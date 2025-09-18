@@ -28,6 +28,29 @@ return require('packer').startup(function(use)
     use ({'andweeb/presence.nvim'})
     use ({'catppuccin/nvim'})
     use ({'kdheepak/lazygit.nvim'})
+    use ({'sphamba/smear-cursor.nvim'})
+    use ({'nvim-telescope/telescope-fzf-native.nvim'})
+
+    use {
+      "yetone/avante.nvim",
+      build = "make BUILD_FROM_SOURCE=true",
+      lazy = false,
+      version = false,
+      BUILD_FROM_SOURCE = true,
+      config = function()
+        require("avante_lib").load()
+        require("avante").setup()
+      end,
+      requires = {
+        "nvim-treesitter/nvim-treesitter",
+        "stevearc/dressing.nvim",
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        --- The below dependencies are optional,
+        "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+        "HakonHarnes/img-clip.nvim",
+      },
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
