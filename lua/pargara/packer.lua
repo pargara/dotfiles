@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
     use ({'catppuccin/nvim'})
     use ({'kdheepak/lazygit.nvim'})
     use ({'sphamba/smear-cursor.nvim'})
-    use ({'nvim-telescope/telescope-fzf-native.nvim'})
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     use {
       "yetone/avante.nvim",

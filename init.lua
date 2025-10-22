@@ -28,7 +28,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 100  -- Increased from 50ms to reduce LSP overhead (still very responsive)
 
 vim.opt.colorcolumn = "80"
 
