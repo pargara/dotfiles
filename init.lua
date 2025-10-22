@@ -37,7 +37,7 @@ vim.cmd.colorscheme "catppuccin-macchiato"
 
 -- TODO: Fix path of ruby host, check the checkhealth command
 -- let g:ruby_host_prog = '~/.asdf/installs/ruby/3.3.1/bin/neovim-ruby-host'
-vim.g.ruby_host_prog = vim.fn.expand("~/.asdf/installs/ruby/3.3.1/bin/neovim-ruby-host")
+vim.g.ruby_host_prog = vim.fn.expand("~/.asdf/installs/ruby/3.4.1/bin/neovim-ruby-host")
 
 
 
