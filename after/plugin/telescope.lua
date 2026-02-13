@@ -1,9 +1,15 @@
-local telescope = require('telescope')
+local ok, telescope = pcall(require, 'telescope')
+if not ok then return end
+
 local builtin = require('telescope.builtin')
 
 -- Setup telescope with fzf-native for faster and smarter fuzzy finding
 telescope.setup({
     defaults = {
+        -- Disable treesitter highlighting in previews (compatibility fix)
+        preview = {
+            treesitter = false,
+        },
         -- Better fuzzy matching that works with tokens
         path_display = { 'smart' },
         file_ignore_patterns = { "node_modules", ".git/" },

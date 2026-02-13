@@ -8,8 +8,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', branch = 'main',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -32,29 +31,8 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     use {
-      "yetone/avante.nvim",
-      build = "make BUILD_FROM_SOURCE=true",
-      lazy = false,
-      version = false,
-      BUILD_FROM_SOURCE = true,
-      config = function()
-        require("avante_lib").load()
-        require("avante").setup()
-      end,
-      requires = {
-        "nvim-treesitter/nvim-treesitter",
-        "stevearc/dressing.nvim",
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-        --- The below dependencies are optional,
-        "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-        "HakonHarnes/img-clip.nvim",
-      },
-    }
-
-    use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'main',
         requires = {
             --- Uncomment these if you want to manage LSP servers from neovim
             -- {'williamboman/mason.nvim'},
@@ -67,6 +45,16 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lsp'},
             {'L3MON4D3/LuaSnip'},
         }
+    }
+
+    -- Claude Code integration
+    use ({'folke/snacks.nvim'})
+    use {
+        'coder/claudecode.nvim',
+        requires = {'folke/snacks.nvim'},
+        config = function()
+            require('claudecode').setup()
+        end,
     }
 
 end)
