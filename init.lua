@@ -1,3 +1,8 @@
+vim.g.loaded_perl_provider = 0
+if #vim.api.nvim_list_uis() == 0 then
+    vim.g.presence_has_setup = 1
+end
+
 require("pargara")
 
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20"
@@ -38,6 +43,4 @@ vim.cmd.colorscheme "catppuccin-macchiato"
 -- TODO: Fix path of ruby host, check the checkhealth command
 -- let g:ruby_host_prog = '~/.asdf/installs/ruby/3.3.1/bin/neovim-ruby-host'
 vim.g.ruby_host_prog = vim.fn.expand("~/.asdf/installs/ruby/3.4.1/bin/neovim-ruby-host")
-
-
 

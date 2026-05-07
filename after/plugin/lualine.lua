@@ -1,7 +1,7 @@
 require('lualine').setup{
     options = {
         icons_enabled = true,
-        theme = 'catppuccin-mocha'
+        theme = 'catppuccin-macchiato'
     },
     sections = {
         lualine_a = {'mode'},
@@ -11,5 +11,4 @@ require('lualine').setup{
         lualine_y = {'progress'},
         lualine_z = {'location'},
     },
-    extensions = {'delek'},
 }

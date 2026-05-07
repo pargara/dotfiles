@@ -1,5 +1,5 @@
 -- LSP Performance optimizations
-vim.lsp.set_log_level("ERROR")
+vim.lsp.log.set_level(vim.log.levels.ERROR)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -50,7 +50,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-require('mason').setup({})
+require('mason').setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
 require('mason-lspconfig').setup({
     ensure_installed = {'ts_ls', 'rust_analyzer', 'eslint', 'ruby_lsp', 'pylsp' },
     automatic_enable = false,
@@ -58,12 +67,9 @@ require('mason-lspconfig').setup({
 
 -- Use the new nvim 0.11+ vim.lsp.config API
 for server_name, config in pairs(servers) do
-    vim.lsp.config[server_name] = {
+    vim.lsp.config(server_name, vim.tbl_deep_extend("force", {
         capabilities = capabilities,
-        settings = config.settings or {},
-        cmd = config.cmd,
-        init_options = config.init_options,
-    }
+    }, config))
     vim.lsp.enable(server_name)
 end
 

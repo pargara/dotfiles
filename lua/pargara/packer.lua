@@ -28,6 +28,9 @@ return require('packer').startup(function(use)
     use ({'catppuccin/nvim'})
     use ({'kdheepak/lazygit.nvim'})
     use ({'sphamba/smear-cursor.nvim'})
+    use ({'MunifTanjim/nui.nvim'})
+    use ({'MeanderingProgrammer/render-markdown.nvim'})
+    use ({'nvim-tree/nvim-web-devicons'})
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     use {
@@ -43,7 +46,7 @@ return require('packer').startup(function(use)
             -- Autocompletion
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
+            {'L3MON4D3/LuaSnip', run = 'make install_jsregexp'},
         }
     }
 
@@ -53,8 +56,23 @@ return require('packer').startup(function(use)
         'coder/claudecode.nvim',
         requires = {'folke/snacks.nvim'},
         config = function()
-            require('claudecode').setup()
+            require('claudecode').setup({
+                auto_start = #vim.api.nvim_list_uis() > 0,
+            })
         end,
+    }
+
+    use {
+        'yetone/avante.nvim',
+        branch = 'main',
+        run = 'make',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'MunifTanjim/nui.nvim',
+            'MeanderingProgrammer/render-markdown.nvim',
+            'nvim-tree/nvim-web-devicons',
+            'folke/snacks.nvim',
+        },
     }
 
 end)

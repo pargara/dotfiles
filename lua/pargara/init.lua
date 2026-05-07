@@ -1,8 +1,3 @@
-require("pargara.remap")vim.cmd [[packadd packer.nvim]]
+require("pargara.remap")
+require("pargara.packer")
 require("pargara.colors")
-
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
-end)

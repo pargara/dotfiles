@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/pargara/.cache/nvim/packer_hererocks/2.1.1767980792/share/lua/5.1/?.lua;/Users/pargara/.cache/nvim/packer_hererocks/2.1.1767980792/share/lua/5.1/?/init.lua;/Users/pargara/.cache/nvim/packer_hererocks/2.1.1767980792/lib/luarocks/rocks-5.1/?.lua;/Users/pargara/.cache/nvim/packer_hererocks/2.1.1767980792/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/pargara/.cache/nvim/packer_hererocks/2.1.1767980792/lib/lua/5.1/?.so"
+local package_path_str = "/Users/pargara/.cache/nvim/packer_hererocks/2.1.1774896198/share/lua/5.1/?.lua;/Users/pargara/.cache/nvim/packer_hererocks/2.1.1774896198/share/lua/5.1/?/init.lua;/Users/pargara/.cache/nvim/packer_hererocks/2.1.1774896198/lib/luarocks/rocks-5.1/?.lua;/Users/pargara/.cache/nvim/packer_hererocks/2.1.1774896198/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/pargara/.cache/nvim/packer_hererocks/2.1.1774896198/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,18 +74,18 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  Alduin = {
-    loaded = true,
-    path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/Alduin",
-    url = "https://github.com/AlessandroYorba/Alduin"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["avante.nvim"] = {
+    loaded = true,
+    path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/avante.nvim",
+    url = "https://github.com/yetone/avante.nvim"
+  },
   ["claudecode.nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15claudecode\frequire\0" },
+    config = { "\27LJ\2\nœ\1\0\0\5\0\b\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0006\3\3\0009\3\4\0039\3\5\3B\3\1\2\21\3\3\0)\4\0\0\0\4\3\0X\3\2€+\3\1\0X\4\1€+\3\2\0=\3\a\2B\0\2\1K\0\1\0\15auto_start\1\0\1\15auto_start\0\18nvim_list_uis\bapi\bvim\nsetup\15claudecode\frequire\0" },
     loaded = true,
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/claudecode.nvim",
     url = "https://github.com/coder/claudecode.nvim"
@@ -130,6 +130,11 @@ _G.packer_plugins = {
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   nvim = {
     loaded = true,
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/nvim",
@@ -150,6 +155,11 @@ _G.packer_plugins = {
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -164,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
+  },
+  ["render-markdown.nvim"] = {
+    loaded = true,
+    path = "/Users/pargara/.local/share/nvim/site/pack/packer/start/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
   },
   ["smear-cursor.nvim"] = {
     loaded = true,
@@ -220,7 +235,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: claudecode.nvim
 time([[Config for claudecode.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15claudecode\frequire\0", "config", "claudecode.nvim")
+try_loadstring("\27LJ\2\nœ\1\0\0\5\0\b\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0006\3\3\0009\3\4\0039\3\5\3B\3\1\2\21\3\3\0)\4\0\0\0\4\3\0X\3\2€+\3\1\0X\4\1€+\3\2\0=\3\a\2B\0\2\1K\0\1\0\15auto_start\1\0\1\15auto_start\0\18nvim_list_uis\bapi\bvim\nsetup\15claudecode\frequire\0", "config", "claudecode.nvim")
 time([[Config for claudecode.nvim]], false)
 
 _G._packer.inside_compile = false
