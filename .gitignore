@@ -1,5 +1,6 @@
 # Plugin install dirs (managed by package manager, not config)
 plugged/
+plugged.bak.*/
 pack/
 
 # Transient nvim state created by vimrc.vim's set directory/backupdir/undodir
