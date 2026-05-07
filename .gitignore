@@ -1,0 +1,11 @@
+# Plugin install dirs (managed by package manager, not config)
+plugged/
+pack/
+
+# Transient nvim state created by vimrc.vim's set directory/backupdir/undodir
+swap/
+backup/
+undo/
+
+# macOS
+.DS_Store
