@@ -6,6 +6,8 @@
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.g.vim_home_path = vim.fn.stdpath("config")
 
 for _, dir in ipairs({ "swap", "backup", "undo" }) do
